@@ -12,7 +12,10 @@ def fact(n):
 	Post: Returns the factorial of 'n'.
 	Throws: ValueError if n < 0
 	"""
-	return math.factorial(n)
+	if n<0:
+		return ValueError
+	else:
+		return math.factorial(n)
 
 def roots(a, b, c):
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
@@ -38,7 +41,7 @@ def integrate(function, lower, upper):
 	"""
 	if lower <= upper:
 		res, err = quad(lambda x:eval(function),lower,upper)
-		return (res, err)
+		return res
 	else:
 		pass
 
@@ -46,4 +49,3 @@ if __name__ == '__main__':
 	print(fact(5))
 	print(roots(1, 0, 1))
 	print(integrate('x ** 2 - 1', -1, 1))
-	print(-1<=1)
